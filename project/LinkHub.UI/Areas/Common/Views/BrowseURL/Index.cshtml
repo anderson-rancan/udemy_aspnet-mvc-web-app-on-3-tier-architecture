@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LinkHub.BOL.tbl_Url>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>URLs</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlDesc)
+        </th>
+@*        <th>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_Category.CategoryName)
+        </th>
+@*        <th>
+            @Html.DisplayNameFor(model => model.tbl_User.UserEmail)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Url)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlDesc)
+        </td>
+@*        <td>
+            @Html.DisplayFor(modelItem => item.IsApproved)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Category.CategoryName)
+        </td>
+@*        <td>
+            @Html.DisplayFor(modelItem => item.tbl_User.UserEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UrlId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UrlId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UrlId })
+        </td>*@
+    </tr>
+}
+
+</table>
