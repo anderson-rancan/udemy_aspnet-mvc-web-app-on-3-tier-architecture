@@ -1,7 +1,62 @@
-﻿
+﻿@model IEnumerable<LinkHub.BOL.tbl_Category>
+
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>List Categories</h2>
+<script>
+    function ConfirmDelete() {
+        return confirm("Are you sure you want to delete?");
+    }
+</script>
 
+<h2>Index</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <h3>@TempData["Msg"].ToString()</h3>
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("CategoryName", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "CategoryName" })
+            @*@Html.DisplayNameFor(model => model.CategoryName)*@
+        </th>
+        <th>
+            @Html.ActionLink("CategoryDesc", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "CategoryDesc" })
+            @*@Html.DisplayNameFor(model => model.CategoryDesc)*@
+        </th>
+        <th>Delete</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryDesc)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { onclick = "return ConfirmDelete()" })
+        </td>
+    </tr>
+}
+</table>
+
+@{
+    double totalPage = @ViewBag.TotalPages;
+}
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= totalPage; i++)
+        {
+            <li class="@(ViewBag.Page == i ? "active" : string.Empty)">@Html.ActionLink(i.ToString() + " ", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder), SortBy = (ViewBag.SortBy == null ? "Title" : ViewBag.SortBy), Page = i })</li>
+        }
+    </ul>
+</nav>

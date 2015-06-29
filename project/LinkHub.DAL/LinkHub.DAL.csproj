@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryDb.cs" />
+    <Compile Include="UserDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UrlDb.cs" />
   </ItemGroup>

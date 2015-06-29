@@ -57,7 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryBs.cs" />
+    <Compile Include="UserBs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UrlBs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LinkHub.BOL\LinkHub.BOL.csproj">
