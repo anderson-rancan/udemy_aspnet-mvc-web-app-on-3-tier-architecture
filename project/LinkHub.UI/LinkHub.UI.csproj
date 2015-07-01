@@ -115,7 +115,6 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\ApproveURLs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Common\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Common\Views\Home\Index.cshtml" />
     <Content Include="Areas\Security\Views\_ViewStart.cshtml" />
@@ -130,6 +129,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\Admin\Views\ListUser\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ListCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

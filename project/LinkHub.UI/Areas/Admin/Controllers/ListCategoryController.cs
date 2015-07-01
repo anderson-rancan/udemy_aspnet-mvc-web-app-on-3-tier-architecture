@@ -14,11 +14,11 @@ namespace LinkHub.UI.Areas.Admin.Controllers
         public const string DescendingOrder = "Desc";
         public const double PageCount = 10;
 
-        private CategoryBs objBs;
+        private AdminBs objBs;
 
         public ListCategoryController()
         {
-            this.objBs = new CategoryBs();
+            this.objBs = new AdminBs();
         }
 
         //
@@ -28,7 +28,7 @@ namespace LinkHub.UI.Areas.Admin.Controllers
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;
 
-            var categories = this.objBs.GetAll();
+            var categories = this.objBs.Category.GetAll();
             bool desc = string.Equals(sortOrder, DescendingOrder, StringComparison.OrdinalIgnoreCase);
             if (string.IsNullOrWhiteSpace(sortBy)) sortBy = "CategoryName";
 
@@ -61,7 +61,7 @@ namespace LinkHub.UI.Areas.Admin.Controllers
         {
             try
             {
-                this.objBs.Delete(id);
+                this.objBs.Category.Delete(id);
                 TempData["Msg"] = "Deleted successfully";
             }
             catch (Exception ex)

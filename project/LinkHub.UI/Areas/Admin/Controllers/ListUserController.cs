@@ -14,11 +14,11 @@ namespace LinkHub.UI.Areas.Admin.Controllers
         public const string DescendingOrder = "Desc";
         public const double PageCount = 10;
 
-        private UserBs objBs;
+        private AdminBs objBs;
 
         public ListUserController()
         {
-            this.objBs = new UserBs();
+            this.objBs = new AdminBs();
         }
 
         //
@@ -28,7 +28,7 @@ namespace LinkHub.UI.Areas.Admin.Controllers
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;
 
-            var users = this.objBs.GetAll();
+            var users = this.objBs.User.GetAll();
             bool desc = string.Equals(sortOrder, DescendingOrder, StringComparison.OrdinalIgnoreCase);
             if (string.IsNullOrWhiteSpace(sortBy)) sortBy = "UserEmail";
 

@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminBs.cs" />
     <Compile Include="CategoryBs.cs" />
     <Compile Include="UserBs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

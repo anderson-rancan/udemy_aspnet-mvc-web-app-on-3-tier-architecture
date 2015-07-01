@@ -14,11 +14,11 @@ namespace LinkHub.UI.Areas.Common.Controllers
         public const string DescendingOrder = "Desc";
         public const double PageCount = 10;
 
-        private UrlBs objBs;
+        private AdminBs objBs;
 
         public BrowseURLController()
         {
-            this.objBs = new UrlBs();
+            this.objBs = new AdminBs();
         }
 
         //
@@ -28,7 +28,7 @@ namespace LinkHub.UI.Areas.Common.Controllers
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;
 
-            var urls = this.objBs.GetAll().Where(p => string.Equals(p.IsApproved, "A", StringComparison.OrdinalIgnoreCase));
+            var urls = this.objBs.Url.GetAll().Where(p => string.Equals(p.IsApproved, "A", StringComparison.OrdinalIgnoreCase));
             bool desc = string.Equals(sortOrder, DescendingOrder, StringComparison.OrdinalIgnoreCase);
             if (string.IsNullOrWhiteSpace(sortBy)) sortBy = "Title";
 

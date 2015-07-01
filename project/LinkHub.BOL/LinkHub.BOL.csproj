@@ -112,12 +112,15 @@
     <Compile Include="tbl_Category.cs">
       <DependentUpon>LinkHubModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_CategoryValidation.cs" />
     <Compile Include="tbl_Url.cs">
       <DependentUpon>LinkHubModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_UrlValidation.cs" />
     <Compile Include="tbl_User.cs">
       <DependentUpon>LinkHubModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UniqueUrlAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
