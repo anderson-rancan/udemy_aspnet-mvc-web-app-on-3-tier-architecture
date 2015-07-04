@@ -24,11 +24,12 @@ List Of Tasks
 16. ListCategory, ListUser with Sorting and Paging - Completed
 17. CreateCategory & Create SubmitUrl Controller - Completed
 18. Form Validations in BOL for CreateCategory - Completed
-19. Form Validations in BOL for SubmitUrl - Completed
+19. Form (custom) Validations in BOL for SubmitUrl - Completed
 20. Add Scripts for Client Side Validations - Completed
-21. ApproveUrls
-22. Authentication Filter in Global File
-23. Authentication Project
-24. Adding Required Dlls
-25. Creating Custom Membership Providers
-26. Creating Custom Role Providers
+21. Adding Base Classes													- Pending
+22. ApproveUrls and UserRegistration - Completed
+23. Authentication Filter in Global File
+24. Authentication Project
+25. Adding Required Dlls
+26. Creating Custom Membership Providers
+27. Creating Custom Role Providers

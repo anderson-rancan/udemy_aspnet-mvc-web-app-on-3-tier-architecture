@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 namespace LinkHub.BOL
 {
     /// <summary>
-    /// Implementação de atributo para verificação de cadastro de URL única
+    /// Implementação de atributo para verificação de cadastro de e-mail único
     /// </summary>
-    public class UniqueUrlAttribute : ValidationAttribute
+    public class UniqueEmailAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             LinkHubDbEntities db = new LinkHubDbEntities();
 
-            string urlValue = value.ToString();
-            int count = db.tbl_Url.Where(p => p.Url == urlValue).Count();
+            string userEmailValue = value.ToString();
+            int count = db.tbl_User.Where(p => p.UserEmail == userEmailValue).Count();
 
             if (count != 0)
-                return new ValidationResult("Url already exist");
+                return new ValidationResult("User already exist with this email address");
             else
                 return ValidationResult.Success;
         }

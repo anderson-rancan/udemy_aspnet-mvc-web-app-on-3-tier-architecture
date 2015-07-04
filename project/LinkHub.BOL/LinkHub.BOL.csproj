@@ -120,6 +120,8 @@
     <Compile Include="tbl_User.cs">
       <DependentUpon>LinkHubModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_UserValidation.cs" />
+    <Compile Include="UniqueEmailAttribute.cs" />
     <Compile Include="UniqueUrlAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
