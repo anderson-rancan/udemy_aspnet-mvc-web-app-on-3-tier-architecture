@@ -9,16 +9,8 @@ using LinkHub.BLL;
 
 namespace LinkHub.UI.Areas.Admin.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : BaseAdminController
     {
-
-        private AdminBs objBs;
-
-        public CategoryController()
-        {
-            this.objBs = new AdminBs();
-        }
-
         //
         // GET: /Admin/Category/
         public ActionResult Index()

@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +8,8 @@ using LinkHub.BLL;
 
 namespace LinkHub.UI.Areas.Admin.Controllers
 {
-    public class ApproveURLsController : Controller
+    public class ApproveURLsController : BaseAdminController
     {
-
-        private AdminBs objBs = new AdminBs();
-
         //
         // GET: /Admin/ApprovedURLs/
         public ActionResult Index(string status)

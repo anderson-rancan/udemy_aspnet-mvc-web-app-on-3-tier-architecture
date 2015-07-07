@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace LinkHub.UI.Areas.Common.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseCommonController
     {
         //
         // GET: /Common/Home/

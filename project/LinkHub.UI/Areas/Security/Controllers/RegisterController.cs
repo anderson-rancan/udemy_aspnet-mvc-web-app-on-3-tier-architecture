@@ -9,16 +9,8 @@ using LinkHub.BOL;
 
 namespace LinkHub.UI.Areas.Security.Controllers
 {
-    public class RegisterController : Controller
+    public class RegisterController : BaseSecurityController
     {
-
-        private AdminBs objBs;
-
-        public RegisterController()
-        {
-            this.objBs = new AdminBs();
-        }
-
         //
         // GET: /Security/Register/
         public ActionResult Index()

@@ -13,6 +13,9 @@ namespace LinkHub.UI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // HACK - acrescenta autorização obrigatória em todas páginas que não possuem atributo especificando o contrário
+            GlobalFilters.Filters.Add(new AuthorizeAttribute());
         }
     }
 }

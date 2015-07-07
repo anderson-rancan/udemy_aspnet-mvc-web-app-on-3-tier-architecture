@@ -9,6 +9,7 @@ using LinkHub.BOL;
 
 namespace LinkHub.UI.Areas.User.Controllers
 {
+    [Authorize(Roles = "A,U")]
     public class URLController : Controller
     {
 
@@ -32,11 +33,14 @@ namespace LinkHub.UI.Areas.User.Controllers
         {
             try
             {
+                objUrl.IsApproved = "P";
+                objUrl.UserId = objBs.User.GetAll().Where(p => p.UserEmail == User.Identity.Name).FirstOrDefault().UserId;
+
                 if (ModelState.IsValid)
                 {
                     this.objBs.Url.Insert(objUrl);
                     TempData["Msg"] = "Created Successfully";
-                    
+
                 }
                 else
                 {
@@ -52,5 +56,5 @@ namespace LinkHub.UI.Areas.User.Controllers
 
             return this.RedirectToAction("Index");
         }
-	}
+    }
 }

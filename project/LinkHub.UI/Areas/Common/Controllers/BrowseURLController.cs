@@ -7,19 +7,12 @@ using System.Web.Mvc;
 
 namespace LinkHub.UI.Areas.Common.Controllers
 {
-    public class BrowseURLController : Controller
+    public class BrowseURLController : BaseCommonController
     {
 
         public const string AscendingOrder = "Asc";
         public const string DescendingOrder = "Desc";
         public const double PageCount = 10;
-
-        private AdminBs objBs;
-
-        public BrowseURLController()
-        {
-            this.objBs = new AdminBs();
-        }
 
         //
         // GET: /Common/BrowseURL/

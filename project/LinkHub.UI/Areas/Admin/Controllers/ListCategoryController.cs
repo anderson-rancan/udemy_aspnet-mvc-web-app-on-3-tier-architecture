@@ -7,19 +7,11 @@ using System.Web.Mvc;
 
 namespace LinkHub.UI.Areas.Admin.Controllers
 {
-    public class ListCategoryController : Controller
+    public class ListCategoryController : BaseAdminController
     {
-
         public const string AscendingOrder = "Asc";
         public const string DescendingOrder = "Desc";
         public const double PageCount = 10;
-
-        private AdminBs objBs;
-
-        public ListCategoryController()
-        {
-            this.objBs = new AdminBs();
-        }
 
         //
         // GET: /Admin/ListCategory/
