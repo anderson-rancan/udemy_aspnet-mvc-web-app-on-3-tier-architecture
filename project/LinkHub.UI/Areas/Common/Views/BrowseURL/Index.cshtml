@@ -10,8 +10,8 @@
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
-<table class="table">
-    <tr>
+<table class="table table-striped table-hover">
+    <tr class="success">
         <th>
             @Html.ActionLink("UrlTitle", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "Title" })
             @*            @Html.DisplayNameFor(model => model.UrlTitle)*@

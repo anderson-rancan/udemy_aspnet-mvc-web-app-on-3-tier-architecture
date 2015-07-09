@@ -16,13 +16,21 @@ namespace LinkHub.BOL
         {
             LinkHubDbEntities db = new LinkHubDbEntities();
 
-            string userEmailValue = value.ToString();
-            int count = db.tbl_User.Where(p => p.UserEmail == userEmailValue).Count();
+            string userEmailValue = value as string;
 
-            if (count != 0)
-                return new ValidationResult("User already exist with this email address");
+            if (string.IsNullOrWhiteSpace(userEmailValue))
+            {
+                return new ValidationResult("User e-mail address cannot be empty");
+            }
             else
-                return ValidationResult.Success;
+            {
+                int count = db.tbl_User.Where(p => p.UserEmail == userEmailValue).Count();
+
+                if (count != 0)
+                    return new ValidationResult("User already exist with this e-mail address");
+                else
+                    return ValidationResult.Success;
+            }
         }
     }
 }

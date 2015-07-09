@@ -32,3 +32,4 @@ List Of Tasks
 24. Creating Custom Membership Providers - Completed
 25. Authorization - Completed
 27. Creating Custom Role Providers - Completed
+27. Applying a free bootstrap theme - Completed
