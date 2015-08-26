@@ -23,8 +23,8 @@ namespace LinkHub.UI.Areas.Security.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
+                //if (ModelState.IsValid)
+                //{
                     if (Membership.ValidateUser(user.UserEmail, user.Password))
                     {
                         FormsAuthentication.SetAuthCookie(user.UserEmail, false);
@@ -32,11 +32,11 @@ namespace LinkHub.UI.Areas.Security.Controllers
                     }
 
                     TempData["Msg"] = "Login failed";
-                }
-                else
-                {
-                    return View("Index");
-                }
+                //}
+                //else
+                //{
+                //    return View("Index");
+                //}
             }
             catch (Exception ex)
             {

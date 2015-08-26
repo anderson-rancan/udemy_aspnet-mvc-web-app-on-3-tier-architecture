@@ -43,7 +43,30 @@ namespace LinkHub.BLL
 
                     trans.Complete();
                 }
-                catch (Exception ex)
+                catch
+                {
+                    throw;
+                }
+            }
+
+        }
+
+        public void ApproveOrReject(List<int> Ids, string Status)
+        {
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    foreach (var item in Ids)
+                    {
+                        var myUrl = this.Url.GetByID(item);
+                        myUrl.IsApproved = Status;
+                        this.Url.Update(myUrl);
+                    }
+
+                    trans.Complete();
+                }
+                catch (Exception)
                 {
                     throw;
                 }

@@ -132,6 +132,7 @@
     <Content Include="Areas\Security\Views\Register\Index.cshtml" />
     <Content Include="Areas\Security\Views\Login\Index.cshtml" />
     <Content Include="Areas\Common\Views\QuickURLSubmit\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ApproveURLs\Partial.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -42,7 +42,7 @@
                         {
                         <li>@Html.ActionLink("SubmitURL", "Index", new { Controller = "URL", Area = "User" })</li>
                         <li>@Html.ActionLink("SignOut", "SignOut", new { Controller = "Login", Area = "Security" })</li>
-                        <li><a href="#">Welcome Mr/Ms @User.Identity.Name</a></li>
+                        <li><a href="#">@User.Identity.Name</a></li>
                         }
                     }
                     else

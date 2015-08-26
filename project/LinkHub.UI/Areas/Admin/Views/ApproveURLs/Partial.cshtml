@@ -1,0 +1,71 @@
+﻿@model IEnumerable<LinkHub.BOL.tbl_Url>
+
+@if (TempData["Msg"] != null)
+{
+    <h4>@TempData["Msg"].ToString()</h4>
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <tr>
+            @*<th>Approve/Reject</th>*@
+            <th>@Html.CheckBox("selectall")</th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrlTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrlDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsApproved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl_Category.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl_User.UserEmail)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*                <td>
+                    @Html.ActionLink("Approve", "ChangeStatus", new { id = item.UrlId, status = "A" }, new { onclick = "return ConfirmApprove()" }) |
+                    @Html.ActionLink("Reject", "ChangeStatus", new { id = item.UrlId, status = "R" }, new { onclick = "return ConfirmReject()" })
+                </td>*@
+                <td>
+                    @Html.CheckBox(item.UrlId.ToString(), false, new { @class = "ckb", Id = item.UrlId })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrlTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrlDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsApproved)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_Category.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_User.UserEmail)
+                </td>
+                @*        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UrlId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UrlId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UrlId })
+        </td>*@
+            </tr>
+        }
+
+    </table>
+</div>
